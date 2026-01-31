@@ -1,0 +1,341 @@
+.result-description {
+  max-width: 420px;
+  margin-top: 1.5rem;
+  font-weight: 300;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* โครงสร้างหลัก */
+.result-page {
+  min-height: 100vh;
+  padding: 0px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    background 0.6s ease,
+    color 0.6s ease;
+  flex-direction: column; /* 👈 บังคับเรียงลงล่าง */
+  gap: 1.5rem;
+}
+
+.result-page-1 {
+  min-height: 100vh;
+  padding: 20px  ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    background 0.6s ease,
+    color 0.6s ease;
+  flex-direction: column; /* 👈 บังคับเรียงลงล่าง */
+  gap: 0rem;
+}
+
+.result-page-2 {
+  min-height: 100vh;
+  padding: 0px 20px 20px 20px ;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  transition:
+    background 0.6s ease,
+    color 0.6s ease;
+  flex-direction: column; /* 👈 บังคับเรียงลงล่าง */
+  margin-top: -40px;
+}
+
+
+.result-card {
+  max-width: 520px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  animation: fadeUp 0.6s ease;
+  position: relative;
+}
+
+/* header */
+.result-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.result-title {
+  font-size: 26px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+/* story */
+.result-story {
+  margin: 24px 0;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* section */
+/* .result-section h4 {
+  margin-top: 4px;
+} */
+
+.result-section ul {
+  padding-left: 18px;
+}
+
+/* footer */
+.result-footer {
+  margin-top: 32px;
+  font-size: 13px;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.watermark {
+  position: absolute;
+  align-items: center;
+  bottom: 16px;
+  right: 30px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  user-select: none;
+}
+
+.theme-default {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.result-section.caution {
+  background: rgba(255, 200, 200, 0.2);
+  border-left: 4px solid #ff6b6b;
+}
+
+/* animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Theme ตามผลลัพธ์ ===== */
+
+/* heart */
+.theme-heart {
+  background: linear-gradient(135deg, #eecfe1, #f7e9f2) !important;
+}
+
+.theme-heart .result-title {
+  color: #c72d87;
+}
+
+/* growth */
+.theme-growth {
+  background: linear-gradient(135deg, #fef6db, #fffcee) !important;
+}
+
+.theme-growth .result-title {
+  color: #8a7c1e;
+}
+
+/* survival */
+.theme-survival {
+  background: linear-gradient(135deg, #f1c7ff, #f9e6ff) !important;
+}
+
+.theme-survival .result-title {
+  color: #950cc2;
+}
+
+
+
+#result-export {
+  opacity: 1 !important; /* เปลี่ยนจาก 2 เป็น 1 */
+  visibility: visible !important;
+}
+
+
+
+.exporting * {
+  opacity: 1 !important; /* เปลี่ยนจาก 2 เป็น 1 */
+  filter: none !important;
+  box-shadow: none !important;
+  /* color: #2f4f3f !important; <-- ลบทิ้งเพื่อให้มันใช้สีตาม Theme นั้นๆ (เช่น สีชมพูใน Theme Connection) */
+}
+
+.result-image {
+  text-align: center;
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.result-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.restart-btn {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #1a1a1a !important;
+  padding: 12px 40px;
+  border-radius: 100px; /* ทรงมน Pill */
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 50%;
+}
+
+.restart-btn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.save-btn {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 40px;
+  border-radius: 100px; /* ทรงมน Pill */
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 50%;
+}
+.save-btn:hover {
+  opacity: 0.85;
+}
+
+/* 1. บังคับให้หน้าจอชัดเจน 100% ไม่จาง */
+
+/* คลาสพิเศษที่จะทำงานเฉพาะตอนกำลัง Save รูป */
+.exporting .no-export {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* 2. ดีไซน์ปุ่ม Pill Shape สีดำ-ขาว */
+.result-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Result.css */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.overlay-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-content p {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.overlay-content button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.secondary-analysis {
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 4px solid var(--theme-color);
+  padding: 0px 15px 0px 15px;
+  margin: 20px 0;
+  border-radius: 0 12px 12px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.complex-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* ปรับสีตัวอักษรให้เข้มชัดเจนแก้ปัญหารูปจาง */
+.result-story p,
+.secondary-analysis p {
+  color: #2c3e50 !important;
+  opacity: 1 !important;
+}
+
+/* เมื่อกำลังเซฟรูป ให้บังคับการ์ดเป็นสีขาวทึบและปิดตัวช่วยฟิลเตอร์ที่ทำให้ภาพจาง */
+.exporting .result-card {
+  background: #ffffff !important; /* เปลี่ยนจาก rgba เป็นสีขาวทึบ */
+  backdrop-filter: none !important; /* ปิดตัวเบลอที่เป็นปัญหา */
+  box-shadow: none !important; /* ปิดเงาเพื่อความคมชัด */
+}
+
+/* บังคับสีตัวอักษรให้ดำเข้มขึ้นในโหมดเซฟรูป */
+.exporting .result-title,
+.exporting .result-story p,
+.exporting .secondary-analysis p,
+.exporting .result-section li {
+  color: #1a1a1a !important;
+  opacity: 1 !important;
+}
+
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #e5e5e5;
+  margin: 24px 0;
+}
+.exporting .divider {
+  background: #c0c0c0 !important;
+}
