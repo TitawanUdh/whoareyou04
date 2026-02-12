@@ -53,20 +53,22 @@ const saveToSheet = async (answers, result) => {
     if (!currentAnswers.length) return null;
     return analyzeResult(currentAnswers);
   }, [answers, savedResult]);
- useEffect(() => {
+  
+useEffect(() => {
   if (!profile) return;
 
-  // ป้องกันส่งซ้ำ
   const alreadySent = localStorage.getItem("sheet-sent");
   if (alreadySent) return;
 
-  saveToSheet(
-    answers?.length ? answers : savedResult?.rawAnswers,
-    profile.title
-  );
+  const finalAnswers =
+    answers?.length ? answers : savedResult?.rawAnswers || [];
+
+  saveToSheet(finalAnswers, profile.title);
 
   localStorage.setItem("sheet-sent", "true");
-}, [profile])
+}, [profile, answers, savedResult]);
+
+
   useEffect(() => {
     if (!answers?.length || !profile) return;
 
