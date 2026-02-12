@@ -46,8 +46,6 @@ const saveToSheet = async (answers, result) => {
   });
 };
 
-
-
   const profile = useMemo(() => {
     const currentAnswers =
       answers?.length > 0 ? answers : savedResult?.rawAnswers || [];
@@ -145,7 +143,7 @@ const saveToSheet = async (answers, result) => {
           <div className="result-header text-center">
             <p className="result-label">ตัวตนหลักของคุณคือ</p>
             <h2>{profile?.title}</h2>
-            <h7 className="text-secondary">{profile?.subTitle}</h7>
+            <h5 className="text-secondary">{profile?.subTitle}</h5>
           </div>
 
           <div className="d-flex justify-content-center">
