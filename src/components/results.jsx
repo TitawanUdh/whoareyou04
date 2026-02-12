@@ -32,7 +32,7 @@ const saveToSheet = async (answers, result) => {
 
   localStorage.setItem("psychoUserId", userId);
 
-  await fetch("https://script.google.com/macros/s/AKfycbwJhqxG_IdcQxKoovQ28c4FxUmA1K7o2UC376GwTUjKe6BCMbygyp9x5Geo3Noy7FUGUg/exec", {
+  await fetch("https://script.google.com/macros/s/AKfycbxC7RJrFgj5uW6SDW0v8v9j897gMwPYoJrYU7gIAKI5t9g0qlHT22jVHlxWMQCC9LSqQQ/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
