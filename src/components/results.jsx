@@ -11,6 +11,8 @@ import ImgDaisy from "../components/assets/images/daisy.png";
 import "../components/Result.css";
 
 const Result = ({ answers, setAnswers }) => {
+ ;
+
   const navigate = useNavigate();
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -23,8 +25,29 @@ const Result = ({ answers, setAnswers }) => {
     }
   }, []);
 
-  // แก้ไขจุดที่ 1: ย้ายการประกาศ currentAnswers เข้ามาข้างใน useMemo
-  // และใส่ dependencies ให้ครบถ้วน
+const saveToSheet = async (answers, result) => {
+  const userId =
+    localStorage.getItem("psychoUserId") ||
+    Math.random().toString(36).substring(2);
+
+  localStorage.setItem("psychoUserId", userId);
+
+  await fetch("https://script.google.com/macros/s/AKfycbwIdkgA_7qGheoz1QgcPKn8_SpzGCMVN_2WFET-hQJHeGq1lQiZT8XQDpuuu4G_X807qw/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+      answers,
+      result,
+    }),
+  });
+};
+
+
+
   const profile = useMemo(() => {
     const currentAnswers =
       answers?.length > 0 ? answers : savedResult?.rawAnswers || [];
@@ -32,7 +55,20 @@ const Result = ({ answers, setAnswers }) => {
     if (!currentAnswers.length) return null;
     return analyzeResult(currentAnswers);
   }, [answers, savedResult]);
+ useEffect(() => {
+  if (!profile) return;
 
+  // ป้องกันส่งซ้ำ
+  const alreadySent = localStorage.getItem("sheet-sent");
+  if (alreadySent) return;
+
+  saveToSheet(
+    answers?.length ? answers : savedResult?.rawAnswers,
+    profile.title
+  );
+
+  localStorage.setItem("sheet-sent", "true");
+}, [profile])
   useEffect(() => {
     if (!answers?.length || !profile) return;
 
@@ -92,6 +128,7 @@ const Result = ({ answers, setAnswers }) => {
 
   const handleRestart = () => {
     localStorage.removeItem("myself-result");
+    localStorage.removeItem("sheet-sent");
     setAnswers([]);
     navigate("/");
   };
