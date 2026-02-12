@@ -62,19 +62,19 @@ export default function LoadingResult() {
             )}
           </span>{" "}
         </div>
-        <h2 className="mt-3">ล้างสมอง ?</h2>
+        <h2 className="mt-3">ของพิเศษให้แก่คนพิเศษ</h2>
         <div className="d-flex justify-content-center my-3">
           <Image src={AdsBook01} alt="หนังสือล้างสมอง" className="ads-image" />
         </div>
         <p className="ads-text">
           {" "}
-          หนังสือเล่มนี้จะพาคุณมองเห็น “ด้านที่มองไม่เห็น” ของจิตวิทยามนุษย์
-          ตั้งแต่กลไกการชักจูง การควบคุมความคิด
-          ไปจนถึงวิธีที่คนธรรมดาอาจถูกชี้นำโดยไม่รู้ตัว เมื่อเข้าใจมัน
-          คุณจะเริ่มมองโลกและผู้คนได้ชัดขึ้นกว่าเดิม
+          ดอกไม้แต่ละชนิดมีความหมายและพลังในการเยียวยาที่แตกต่างกัน
+          หากเลือกดอกไม้ให้ตรงความหมายของผู้รับ จะช่วยส่งเสริมพลังบวก
+          และสร้างความสัมพันธ์ที่ลึกซึ้งยิ่งขึ้น
+          ลองเลือกดอกไม้ที่เหมาะกับคนที่คุณรักดูสิคะ{" "}
         </p>
         <a
-          href="https://s.shopee.co.th/8V30fx3mwy"
+          href="https://s.shopee.co.th/AKV4D0e0MN"
           target="_blank"
           rel="noopener noreferrer"
           className="ads-link"

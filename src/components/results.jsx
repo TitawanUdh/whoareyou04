@@ -4,9 +4,10 @@ import "./Result.css";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
-import ImgHeart from "../components/assets/images/heart.png";
-import ImgGrowth from "../components/assets/images/growth.png";
-import ImgSurvival from "../components/assets/images/survival.png";
+import ImgSunflower from "../components/assets/images/sunflower.png";
+import ImgRose from "../components/assets/images/rose.png";
+import ImgLavender from "../components/assets/images/lavender.png";
+import ImgDaisy from "../components/assets/images/daisy.png";
 import "../components/Result.css";
 
 const Result = ({ answers, setAnswers }) => {
@@ -107,33 +108,30 @@ const Result = ({ answers, setAnswers }) => {
           <div className="result-header text-center">
             <p className="result-label">ตัวตนหลักของคุณคือ</p>
             <h2>{profile?.title}</h2>
+            <h7 className="text-secondary">{profile?.subTitle}</h7>
           </div>
 
-          <div className="d-flex justify-content-center my-3">
-            {profile?.title?.includes("หัวใจ") ? (
+          <div className="d-flex justify-content-center">
+            {profile?.title?.includes("ทานตะวัน") ? (
               <Image
-                src={ImgHeart}
-                alt="Heart Trait"
+                src={ImgSunflower}
+                alt="Sunflower"
                 className="result-image"
               />
-            ) : profile?.title?.includes("เติบโต") ? (
+            ) : profile?.title?.includes("กุหลาบ") ? (
+              <Image src={ImgRose} alt="Rose" className="result-image" />
+            ) : profile?.title?.includes("ลาเวนเดอร์") ? (
               <Image
-                src={ImgGrowth}
-                alt="Growth Trait"
+                src={ImgLavender}
+                alt="Lavender"
                 className="result-image"
               />
             ) : (
-              <Image
-                src={ImgSurvival}
-                alt="Survival Trait"
-                className="result-image"
-              />
+              <Image src={ImgDaisy} alt="Daisy" className="result-image" />
             )}
           </div>
 
-
-
- <div className="result-story">
+          <div className="mt-2">
             <p>{profile?.deep?.article}</p>
           </div>
 
@@ -151,10 +149,10 @@ const Result = ({ answers, setAnswers }) => {
             <h5>⚠️ เวลาคุณเครียด คุณจะ…</h5>
             <p>{profile?.psyche?.stressPattern}</p>
           </div>
-<div className="result-section">
-  <h5>🌷 จุดที่คุณควรอ่อนโยนกับตัวเอง</h5>
-  <p>{profile?.deep?.gentleReminder}</p>
-</div>
+          <div className="result-section">
+            <h5>🌷 จุดที่คุณควรอ่อนโยนกับตัวเอง</h5>
+            <p>{profile?.deep?.gentleReminder}</p>
+          </div>
 
           <div className="result-actions no-export">
             <Button

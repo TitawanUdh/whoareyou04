@@ -253,7 +253,7 @@
 /* loading */
 .loading-page {
   min-height: 100vh;
-  background: #0f1220;
+  background: #9a3d6d;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -262,7 +262,7 @@
 }
 
 .ad-box {
-  background: #3c4384;
+  background: #af7c91ac;
   border-radius: 16px;
   padding: 16px;
   text-align: center;

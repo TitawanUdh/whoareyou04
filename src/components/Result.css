@@ -142,33 +142,78 @@
   }
 }
 
-/* ===== Theme ตามผลลัพธ์ ===== */
-
-/* heart */
-.theme-heart {
-  background: linear-gradient(135deg, #eecfe1, #f7e9f2) !important;
+.result-card {
+  position: relative;
+  background: linear-gradient(180deg, #f6f1e7 0%, #efe6d6 100%);
+  border-radius: 28px;
+  padding: 28px 22px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    inset 0 0 40px rgba(120, 90, 60, 0.08);
+  border: 1px solid rgba(120, 90, 60, 0.25);
+  overflow: hidden;
+}
+.result-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: 0.35;
+  pointer-events: none;
+}
+.result-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 60px rgba(120, 80, 40, 0.25);
+  border-radius: 28px;
+  pointer-events: none;
+}
+.result-card h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: #3e2f1c;
+  letter-spacing: 0.5px;
 }
 
-.theme-heart .result-title {
-  color: #c72d87;
+.result-card p {
+  color: #4a3b2a;
+  line-height: 1.9;
+  font-size: 15.5px;
+}
+.result-section h5 {
+  font-family: "Playfair Display", serif;
+  color: #5a4330;
+  margin-bottom: 6px;
+  margin-top: 18px;
+  border-left: 3px solid #c8a96a;
+  padding-left: 10px;
+}
+.result-image {
+  width: 180px;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
+  transform: rotate(-2deg);
+  margin: 10px 0 14px;
 }
 
-/* growth */
-.theme-growth {
-  background: linear-gradient(135deg, #fef6db, #fffcee) !important;
+.restart-btn {
+  background: transparent !important;
+  border: 1px solid #a67c52 !important;
+  color: #6b4c2f !important;
+}
+.save-btn {
+  background: #a67c52 !important;
+  border: none !important;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(80, 50, 20, 0.25);
 }
 
-.theme-growth .result-title {
-  color: #8a7c1e;
-}
 
-/* survival */
-.theme-survival {
-  background: linear-gradient(135deg, #f1c7ff, #f9e6ff) !important;
+.restart-btn:hover {
+  background: rgba(166, 124, 82, 0.1) !important;
 }
-
-.theme-survival .result-title {
-  color: #950cc2;
+.save-btn:hover {
+  background: #925f3e !important;
 }
 
 
@@ -187,51 +232,13 @@
   /* color: #2f4f3f !important; <-- ลบทิ้งเพื่อให้มันใช้สีตาม Theme นั้นๆ (เช่น สีชมพูใน Theme Connection) */
 }
 
-.result-image {
-  text-align: center;
-  width: 50%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
 
-.result-actions {
-  margin-top: 24px;
-  display: flex;
-  justify-content: center;
-}
 
-.restart-btn {
-  background-color: #ffffff !important;
-  color: #1a1a1a !important;
-  border: 1px solid #1a1a1a !important;
-  padding: 12px 40px;
-  border-radius: 100px; /* ทรงมน Pill */
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  width: 50%;
-}
 
-.restart-btn:hover {
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.05);
-}
 
-.save-btn {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-  border: none !important;
-  padding: 12px 40px;
-  border-radius: 100px; /* ทรงมน Pill */
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  width: 50%;
-}
-.save-btn:hover {
-  opacity: 0.85;
-}
+
+
+
 
 /* 1. บังคับให้หน้าจอชัดเจน 100% ไม่จาง */
 
@@ -315,7 +322,8 @@
 
 /* เมื่อกำลังเซฟรูป ให้บังคับการ์ดเป็นสีขาวทึบและปิดตัวช่วยฟิลเตอร์ที่ทำให้ภาพจาง */
 .exporting .result-card {
-  background: #ffffff !important; /* เปลี่ยนจาก rgba เป็นสีขาวทึบ */
+  /* background: #e6decd !important;  */
+  background: linear-gradient(180deg, #f6f1e7 0%, #efe6d6 100%);
   backdrop-filter: none !important; /* ปิดตัวเบลอที่เป็นปัญหา */
   box-shadow: none !important; /* ปิดเงาเพื่อความคมชัด */
 }
