@@ -231,12 +231,12 @@
   margin: 5px;
 }
 
-.option:hover {
+/* .option:hover {
   background: rgba(106, 17, 203, 0.25);
   border-color: rgba(106, 17, 203, 0.6);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(106, 17, 203, 0.25);
-}
+} */
 
 /* animation */
 @keyframes fadeUp {
