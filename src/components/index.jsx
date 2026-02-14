@@ -12,7 +12,7 @@ function Index() {
   <div className="fog fog2" />
 
   <div className="container d-flex flex-column justify-content-center align-items-center min-vh-100">
-    <h1 className="title">รู้จักตัวเองไหม ?</h1>
+    <h1 className="title">ดอกไม้ประจำตัวคุณ ?</h1>
 
     <p className="subtitle ">
       ถ้าเปรียนตัวเองเป็นดอกไม้
