@@ -322,7 +322,7 @@
 
 /* เมื่อกำลังเซฟรูป ให้บังคับการ์ดเป็นสีขาวทึบและปิดตัวช่วยฟิลเตอร์ที่ทำให้ภาพจาง */
 .exporting .result-card {
-  /* background: #e6decd !important;  */
+  background: #f0ece3 !important; 
   background: linear-gradient(180deg, #f6f1e7 0%, #efe6d6 100%);
   backdrop-filter: none !important; /* ปิดตัวเบลอที่เป็นปัญหา */
   box-shadow: none !important; /* ปิดเงาเพื่อความคมชัด */
