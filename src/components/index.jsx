@@ -1,5 +1,5 @@
-import React, { useState } from "react"; // เพิ่ม useState
-import { Link, useNavigate } from "react-router-dom"; // เพิ่ม useNavigate เพื่อการเปลี่ยนหน้าในแอปที่ลื่นไหล
+import { useState } from "react"; // เพิ่ม useState
+import { Link } from "react-router-dom"; // เพิ่ม useNavigate เพื่อการเปลี่ยนหน้าในแอปที่ลื่นไหล
 import "../App.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaHeart } from "react-icons/fa";
@@ -8,8 +8,6 @@ import { IoClose } from "react-icons/io5"; // เพิ่มไอคอนป�
 
 function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // สร้าง State สำหรับเปิด/ปิดเมนู
-  const navigate = useNavigate();
-
   const links = [
     {
       num: 1,
