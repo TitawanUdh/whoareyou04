@@ -525,3 +525,73 @@ height: 30px;
   }
 }
 
+.menu-bar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+/* สไตล์พื้นฐานของ Sidebar */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px; /* ซ่อนไว้ทางซ้าย */
+  width: 280px;
+  height: 100%;
+  background: rgba(20, 20, 30, 0.95); /* สีเข้มโปร่งแสงเข้ากับธีมดาว */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: 0.4s ease-in-out;
+  padding: 20px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.side-menu.open {
+  left: 0; /* เลื่อนออกมาเมื่อมี class open */
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: #ff9a9e; /* สีสันตามต้องการ */
+}
+
+/* พื้นหลังมืดๆ เมื่อเปิดเมนู */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
