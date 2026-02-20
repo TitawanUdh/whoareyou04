@@ -535,63 +535,93 @@ height: 30px;
   cursor: pointer;
 }
 
+/* แก้ไขปุ่มเปิดเมนู */
+.menu-bar {
+  position: fixed; /* เปลี่ยนจาก absolute เป็น fixed เพื่อให้ปุ่มอยู่ที่เดิมเสมอ */
+  top: 15px;
+  left: 15px;
+  z-index: 2000; /* ดันให้สูงกว่าทุกอย่างในหน้าจอ */
+  color: #fff;
+  cursor: pointer;
+  padding: 10px; /* เพิ่มพื้นที่ให้กดง่ายขึ้น (Hitbox) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* สไตล์พื้นฐานของ Sidebar */
+.menu-bar svg {
+  font-size: 28px; /* ขยายขนาดไอคอนเล็กน้อย */
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); /* เพิ่มเงาให้เห็นชัดบนพื้นหลังดาว */
+}
+
+/* แก้ไข Sidebar */
 .side-menu {
   position: fixed;
   top: 0;
-  left: -300px; /* ซ่อนไว้ทางซ้าย */
+  left: -280px; /* ค่าเริ่มต้นซ่อนไว้ซ้ายสุด */
   width: 280px;
-  height: 100%;
-  background: rgba(20, 20, 30, 0.95); /* สีเข้มโปร่งแสงเข้ากับธีมดาว */
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  transition: 0.4s ease-in-out;
+  height: 100vh; /* ให้สูงเต็มจอ */
+  background: #1a1a2e !important; /* บังคับสีพื้นหลังให้ทึบและเห็นชัด */
+  z-index: 9999; /* ให้สูงที่สุด */
+  transition: 0.4s ease;
   padding: 20px;
-  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
-  color: white;
-}
-
-.side-menu.open {
-  left: 0; /* เลื่อนออกมาเมื่อมี class open */
-}
-
-.menu-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 15px;
-  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+/* เมื่อเปิดเมนู */
+.side-menu.open {
+  left: 0 !important; /* เลื่อนออกมาให้สุดขอบ */
+}
+
+/* แก้ไขแผ่นใสตอนเปิดเมนู */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2500; /* อยู่ระหว่างปุ่มกับเมนู */
+}
+
+/* ปรับปรุงปุ่มปิดในเมนู */
+
+/* ตรวจสอบว่ารายการในเมนูมีสีขาวและมองเห็นได้ */
+
+
+.menu-list {
+  margin-top: 40px; /* เว้นระยะจากด้านบน */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
 }
 
 .menu-item {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white !important; /* บังคับให้เป็นสีขาว */
   cursor: pointer;
-  transition: 0.3s;
-  border-radius: 8px;
-  margin-bottom: 5px;
-}
-
-.menu-item:hover {
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-icon {
   margin-right: 15px;
-  font-size: 1.2rem;
-  color: #ff9a9e; /* สีสันตามต้องการ */
+  font-size: 20px;
+  color: #ff9a9e; /* สีไอคอนให้เด่นขึ้น */
 }
 
-/* พื้นหลังมืดๆ เมื่อเปิดเมนู */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+.menu-title {
+  color: white !important; /* บังคับให้เห็นตัวหนังสือ */
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* ปุ่มปิด */
+.close-btn {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
 }
